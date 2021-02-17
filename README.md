@@ -2,7 +2,7 @@
 
 This repository contains the assignments and solutions for Programming Languages Lab CS331 2021 at IIT Guwahati\
 \
-Assignments -\
+Assignments -
 
 1) Assignment 1 - BASIC JAVA CONCURRENT PROGRAMMING\
         A) Estimation of PI with Monte Carlo Method\
