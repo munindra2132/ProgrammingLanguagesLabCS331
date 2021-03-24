@@ -54,17 +54,38 @@ inorder :: Tree a -> [a]
 inorder Nil = []
 inorder (Node a l r) = inorder a ++ [l] ++ inorder r
 
+
+traversal :: (Show a, Ord a) => [a] -> IO ()
+traversal arr = do
+     putStr "Pre-order traversal is - "
+     print (pre (crtreefromlist arr))
+     putStr "Post-order traversal is - "
+     print (post (crtreefromlist arr))
+     putStr "In-order traversal is - "
+     print (inorder (crtreefromlist arr))
+
 main :: IO ()
 main = do
+   putStrLn "Running test cases -"
+   putStrLn " "
+   let test  = [ 14, 88, 22, 1, 9, 53, 4, 16, 5]
+   let test1 = [1,3,6,2,1990,4,3] 
+   let test2 = [12,24,22,43,2,43,41]
+   putStr "List -"
+   print test
+   traversal test
+   putStrLn ""
+   putStr "List -"
+   print test1
+   traversal test1
+   putStrLn ""
+   putStr "List -"
+   print test2
+   traversal test2
+   putStrLn ""
+   putStrLn "Done Test Cases "
    putStrLn "Enter the input in the form [ a, b, c, d] - "
    input <-getLine 
    let arr = read input :: [Int]
-   let x = pre (crtreefromlist arr)
-   let y = post (crtreefromlist arr)
-   let z = inorder (crtreefromlist arr)
-   putStr "Pre-order traversal is - "
-   print x
-   putStr "Post-order traversal is - "
-   print y
-   putStr "In-order traversal is - "
-   print z
+   traversal arr
+  
